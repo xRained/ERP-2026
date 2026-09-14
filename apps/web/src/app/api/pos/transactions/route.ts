@@ -20,7 +20,6 @@ const createTransactionSchema = z.object({
   tax: z.number().nonnegative().default(0),
   total: z.number().nonnegative(),
   paymentMethod: z.enum(["CASH", "BANK_TRANSFER", "CREDIT_CARD", "DEBIT_CARD", "CHECK"]),
-  currencyId: z.string().optional(),
   lines: z.array(posLineSchema).optional(),
 })
 
@@ -69,7 +68,6 @@ export async function POST(request: Request) {
         tax: validatedData.tax,
         total: validatedData.total,
         paymentMethod: validatedData.paymentMethod,
-        currencyId: validatedData.currencyId || "cmtu9mknf0001yl3x83nmk58a",
         status: "COMPLETED",
         lines: validatedData.lines && validatedData.lines.length > 0 ? {
           create: validatedData.lines.map((line) => ({

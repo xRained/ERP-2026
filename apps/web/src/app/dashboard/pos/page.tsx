@@ -17,7 +17,6 @@ export default function POSPage() {
     tax: 0,
     total: 0,
     paymentMethod: 'CASH',
-    currencyId: '',
     lines: [],
   })
 
@@ -51,7 +50,6 @@ export default function POSPage() {
           tax: 0,
           total: 0,
           paymentMethod: 'CASH',
-          currencyId: '',
           lines: [],
         })
       } else {
@@ -258,16 +256,6 @@ export default function POSPage() {
                       <option value="DEBIT_CARD">Debit Card</option>
                       <option value="CHECK">Check</option>
                     </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Currency ID</label>
-                    <input
-                      type="text"
-                      value={formData.currencyId}
-                      onChange={(e) => setFormData({...formData, currencyId: e.target.value})}
-                      className="w-full px-3 py-2 border rounded-lg"
-                      placeholder="Enter currency ID"
-                    />
                   </div>
                   <div className="flex gap-2 pt-4">
                     <button type="button" onClick={() => setShowForm(false)} className="flex-1 px-4 py-2 border rounded-lg hover:bg-gray-50">
