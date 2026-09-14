@@ -39,8 +39,8 @@ export default function InventoryPage() {
         body: JSON.stringify({
           sku: formData.sku,
           name: formData.name,
-          description: formData.description,
-          category: formData.category,
+          description: formData.description || undefined,
+          category: formData.category || undefined,
           uomId: formData.uomId,
           cost: formData.cost,
           price: formData.price,

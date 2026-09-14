@@ -13,6 +13,7 @@ export default function FinancialPage() {
     code: '',
     name: '',
     type: 'ASSET',
+    parentId: '',
     currencyId: '',
   })
 
@@ -36,8 +37,8 @@ export default function FinancialPage() {
           code: formData.code,
           name: formData.name,
           type: formData.type,
-          parentId: formData.parentId || null,
-          currencyId: formData.currencyId || null,
+          parentId: formData.parentId || undefined,
+          currencyId: formData.currencyId || undefined,
         }),
       })
       const data = await response.json()
@@ -48,6 +49,7 @@ export default function FinancialPage() {
           code: '',
           name: '',
           type: 'ASSET',
+          parentId: '',
           currencyId: '',
         })
       } else {
@@ -221,6 +223,16 @@ export default function FinancialPage() {
                       <option value="REVENUE">Revenue</option>
                       <option value="EXPENSE">Expense</option>
                     </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1">Parent ID</label>
+                    <input
+                      type="text"
+                      value={formData.parentId}
+                      onChange={(e) => setFormData({...formData, parentId: e.target.value})}
+                      className="w-full px-3 py-2 border rounded-lg"
+                      placeholder="Enter parent account ID"
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-1">Currency ID</label>
