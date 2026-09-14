@@ -50,10 +50,10 @@ export async function POST(request: Request) {
     const workOrder = await prisma.manufacturingWorkOrder.create({
       data: {
         number: validatedData.number,
-        bomId: validatedData.productId || null,
+        bomId: validatedData.productId || undefined,
         quantity: validatedData.quantity,
         startDate: validatedData.startDate ? new Date(validatedData.startDate) : new Date(),
-        dueDate: validatedData.endDate ? new Date(validatedData.endDate) : null,
+        dueDate: validatedData.endDate ? new Date(validatedData.endDate) : undefined,
         status: validatedData.status,
         createdById: session.user.id,
       },

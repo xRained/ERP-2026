@@ -1585,17 +1585,17 @@ model BOMLine {
 model ManufacturingWorkOrder {
   id          String   @id @default(cuid())
   number      String   @unique
-  bomId       String
+  bomId       String?
   quantity    Float
   startDate   DateTime
-  dueDate     DateTime
+  dueDate     DateTime?
   status      WorkOrderStatus
   priority    String   @default("NORMAL")
   createdById String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  bom         BOM     @relation(fields: [bomId], references: [id])
+  bom         BOM?     @relation(fields: [bomId], references: [id])
   steps       WorkOrderStep[]
   createdBy   User    @relation(fields: [createdById], references: [id])
   productionSchedules ProductionSchedule[]
