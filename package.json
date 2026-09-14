@@ -8,10 +8,9 @@
   ],
   "scripts": {
     "dev": "turbo run dev",
-    "build": "turbo run build",
+    "build": "cd packages/db && npx prisma generate && cd apps/web && npm run build",
     "lint": "turbo run lint",
-    "clean": "turbo run clean",
-    "postinstall": "cd packages/db && npx prisma generate"
+    "clean": "turbo run clean"
   },
   "devDependencies": {
     "turbo": "^1.11.0"
