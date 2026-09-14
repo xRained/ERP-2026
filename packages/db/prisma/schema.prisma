@@ -690,7 +690,7 @@ enum ActivityStatus {
 model SalesOrder {
   id          String   @id @default(cuid())
   number      String   @unique
-  contactId   String
+  contactId   String?
   orderDate   DateTime
   status      OrderStatus
   subtotal    Float
@@ -703,7 +703,7 @@ model SalesOrder {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  contact     Contact @relation(fields: [contactId], references: [id])
+  contact     Contact? @relation(fields: [contactId], references: [id])
   lines       OrderLine[]
   payments    OrderPayment[]
   fulfillments OrderFulfillment[]

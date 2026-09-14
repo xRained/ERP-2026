@@ -61,7 +61,7 @@ export async function POST(request: Request) {
     const order = await prisma.salesOrder.create({
       data: {
         number: validatedData.number,
-        contactId: validatedData.contactId || null,
+        contactId: validatedData.contactId,
         orderDate: new Date(),
         status: "DRAFT",
         subtotal: validatedData.subtotal,
