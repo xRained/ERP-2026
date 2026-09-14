@@ -7,8 +7,8 @@ import { z } from "zod"
 const createSupplierSchema = z.object({
   name: z.string().min(1),
   code: z.string().min(1),
-  contactName: z.string().optional(),
-  email: z.string().optional(),
+  contactName: z.string().min(1),
+  email: z.string().email(),
   phone: z.string().optional(),
   organizationId: z.string(),
 })

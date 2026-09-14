@@ -50,7 +50,7 @@ export async function POST(request: Request) {
         code: validatedData.code,
         name: validatedData.name,
         type: validatedData.type,
-        parentId: validatedData.parentId,
+        parentId: validatedData.parentId || undefined,
         currencyId: validatedData.currencyId || "cmtu9mknf0001yl3x83nmk58a",
         balance: 0,
         isActive: true,

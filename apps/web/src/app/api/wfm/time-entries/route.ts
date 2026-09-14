@@ -51,7 +51,7 @@ export async function POST(request: Request) {
         employeeId: validatedData.employeeId || "temp-id",
         date: validatedData.date ? new Date(validatedData.date) : new Date(),
         clockIn: validatedData.clockIn ? new Date(validatedData.clockIn) : new Date(),
-        clockOut: validatedData.clockOut ? new Date(validatedData.clockOut) : null,
+        clockOut: validatedData.clockOut ? new Date(validatedData.clockOut) : undefined,
         breakMinutes: validatedData.breakMinutes,
         status: "PENDING",
         userId: session.user.id,
