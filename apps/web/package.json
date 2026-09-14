@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "dotenv -e .env -- next dev",
     "build": "next build",
-    "postinstall": "cd ../db && npx prisma generate",
     "start": "next start",
     "lint": "next lint"
   },
