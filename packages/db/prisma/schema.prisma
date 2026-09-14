@@ -776,10 +776,10 @@ enum FulfillmentStatus {
 model POSTransaction {
   id          String   @id @default(cuid())
   number      String   @unique
-  tillId      String
-  shiftId     String
+  tillId      String?
+  shiftId     String?
   userId      String
-  shift       POSShift @relation(fields: [shiftId], references: [id])
+  shift       POSShift? @relation(fields: [shiftId], references: [id])
   amount      Float
   tax         Float
   total       Float

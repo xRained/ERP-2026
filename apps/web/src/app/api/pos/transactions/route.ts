@@ -62,8 +62,8 @@ export async function POST(request: Request) {
     const transaction = await prisma.pOSTransaction.create({
       data: {
         number: validatedData.number,
-        tillId: validatedData.tillId || null,
-        shiftId: validatedData.shiftId || null,
+        tillId: validatedData.tillId,
+        shiftId: validatedData.shiftId,
         userId: session.user.id,
         amount: validatedData.amount,
         tax: validatedData.tax,
