@@ -12,7 +12,6 @@ export default function EcommercePage() {
   const [formData, setFormData] = useState({
     name: '',
     url: '',
-    platform: 'SHOPIFY',
     organizationId: 'cmtu9mkcf0000yl3x83nmk589',
   })
 
@@ -41,7 +40,6 @@ export default function EcommercePage() {
         setFormData({
           name: '',
           url: '',
-          platform: 'SHOPIFY',
           organizationId: 'cmtu9mkcf0000yl3x83nmk589',
         })
       } else {
@@ -182,20 +180,6 @@ export default function EcommercePage() {
                       className="w-full px-3 py-2 border rounded-lg"
                       placeholder="https://store.example.com"
                     />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Platform</label>
-                    <select
-                      value={formData.platform}
-                      onChange={(e) => setFormData({...formData, platform: e.target.value as any})}
-                      className="w-full px-3 py-2 border rounded-lg"
-                      required
-                    >
-                      <option value="SHOPIFY">Shopify</option>
-                      <option value="WOOCOMMERCE">WooCommerce</option>
-                      <option value="MAGENTO">Magento</option>
-                      <option value="CUSTOM">Custom</option>
-                    </select>
                   </div>
                   <div className="flex gap-2 pt-4">
                     <button type="button" onClick={() => setShowForm(false)} className="flex-1 px-4 py-2 border rounded-lg hover:bg-gray-50">

@@ -7,7 +7,6 @@ import { z } from "zod"
 const createStorefrontSchema = z.object({
   name: z.string().min(1),
   url: z.string().optional(),
-  platform: z.enum(["SHOPIFY", "WOOCOMMERCE", "MAGENTO", "CUSTOM"]),
   organizationId: z.string(),
 })
 
@@ -48,7 +47,6 @@ export async function POST(request: Request) {
       data: {
         name: validatedData.name,
         domain: validatedData.url || "localhost",
-        platform: validatedData.platform,
         isActive: true,
         organizationId: validatedData.organizationId || "cmtu9mkcf0000yl3x83nmk589",
       },
