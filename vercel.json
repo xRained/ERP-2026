@@ -1,0 +1,40 @@
+{
+  "buildCommand": "cd apps/web && npm run build",
+  "outputDirectory": "apps/web/.next",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "DATABASE_URL": {
+      "description": "PostgreSQL connection string",
+      "value": "@database_url"
+    },
+    "NEXTAUTH_SECRET": {
+      "description": "NextAuth secret key",
+      "value": "@nextauth_secret"
+    },
+    "NEXTAUTH_URL": {
+      "description": "NextAuth URL",
+      "value": "@nextauth_url"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
