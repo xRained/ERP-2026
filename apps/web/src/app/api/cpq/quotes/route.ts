@@ -63,8 +63,8 @@ export async function POST(request: Request) {
     const quote = await prisma.quote.create({
       data: {
         number: validatedData.number,
-        contactId: validatedData.contactId || null,
-        validUntil: validatedData.validUntil ? new Date(validatedData.validUntil) : null,
+        contactId: validatedData.contactId,
+        validUntil: validatedData.validUntil ? new Date(validatedData.validUntil) : undefined,
         status: "DRAFT",
         subtotal: validatedData.subtotal,
         discount: validatedData.discount,
