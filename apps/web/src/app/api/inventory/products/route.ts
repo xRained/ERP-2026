@@ -53,8 +53,8 @@ export async function POST(request: Request) {
       data: {
         sku: validatedData.sku,
         name: validatedData.name,
-        description: validatedData.description || null,
-        category: validatedData.category || null,
+        description: validatedData.description,
+        category: validatedData.category,
         uomId: validatedData.uomId || "cmtu9mknf0001yl3x83nmk58a",
         cost: validatedData.cost,
         price: validatedData.price,

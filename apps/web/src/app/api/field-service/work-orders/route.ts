@@ -52,11 +52,11 @@ export async function POST(request: Request) {
     const workOrder = await prisma.serviceWorkOrder.create({
       data: {
         number: validatedData.number,
-        customerId: validatedData.customerId || null,
-        technicianId: validatedData.technicianId || null,
+        customerId: validatedData.customerId,
+        technicianId: validatedData.technicianId,
         priority: validatedData.priority,
         status: validatedData.status,
-        scheduledDate: validatedData.scheduledDate ? new Date(validatedData.scheduledDate) : null,
+        scheduledDate: validatedData.scheduledDate ? new Date(validatedData.scheduledDate) : undefined,
         createdById: session.user.id,
       },
     })

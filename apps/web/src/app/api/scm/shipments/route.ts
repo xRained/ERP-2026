@@ -10,7 +10,7 @@ const createShipmentSchema = z.object({
   originId: z.string().optional(),
   destinationId: z.string().optional(),
   status: z.enum(["PENDING", "PICKED_UP", "IN_TRANSIT", "DELIVERED", "DELAYED"]),
-  estimatedDelivery: z.string().optional(),
+  deliveryDate: z.string().optional(),
 })
 
 export async function GET() {
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
         trackingNumber: validatedData.number,
         carrierId: validatedData.carrier,
         status: validatedData.status,
-        estimatedDelivery: validatedData.estimatedDelivery ? new Date(validatedData.estimatedDelivery) : null,
+        deliveryDate: validatedData.deliveryDate ? new Date(validatedData.deliveryDate) : undefined,
       },
     })
 

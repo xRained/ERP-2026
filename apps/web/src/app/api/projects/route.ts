@@ -54,7 +54,7 @@ export async function POST(request: Request) {
         code: validatedData.code,
         customerId: validatedData.customerId,
         startDate: validatedData.startDate ? new Date(validatedData.startDate) : new Date(),
-        endDate: validatedData.endDate ? new Date(validatedData.endDate) : null,
+        endDate: validatedData.endDate ? new Date(validatedData.endDate) : undefined,
         budget: validatedData.budget,
         actual: 0,
         status: "PLANNING",

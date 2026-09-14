@@ -8,7 +8,7 @@ const createAccountSchema = z.object({
   code: z.string().min(1),
   name: z.string().min(1),
   type: z.enum(["ASSET", "LIABILITY", "EQUITY", "REVENUE", "EXPENSE"]).default("ASSET"),
-  parentId: z.string().nullable().optional(),
+  parentId: z.string().optional(),
   currencyId: z.string().default("cmtu9mknf0001yl3x83nmk58a"),
 })
 

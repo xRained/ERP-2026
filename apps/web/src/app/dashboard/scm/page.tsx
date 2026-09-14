@@ -15,7 +15,7 @@ export default function SCMPage() {
     originId: '',
     destinationId: '',
     status: 'PENDING',
-    estimatedDelivery: '',
+    deliveryDate: '',
   })
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function SCMPage() {
           originId: '',
           destinationId: '',
           status: 'PENDING',
-          estimatedDelivery: '',
+          deliveryDate: '',
         })
       } else {
         alert('Error: ' + (data.error || 'Failed to create shipment'))
@@ -226,11 +226,11 @@ export default function SCMPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1">Estimated Delivery</label>
+                    <label className="block text-sm font-medium mb-1">Delivery Date</label>
                     <input
                       type="date"
-                      value={formData.estimatedDelivery}
-                      onChange={(e) => setFormData({...formData, estimatedDelivery: e.target.value})}
+                      value={formData.deliveryDate}
+                      onChange={(e) => setFormData({...formData, deliveryDate: e.target.value})}
                       className="w-full px-3 py-2 border rounded-lg"
                     />
                   </div>

@@ -47,7 +47,7 @@ export async function POST(request: Request) {
       data: {
         name: validatedData.name,
         code: validatedData.code,
-        locationId: validatedData.locationId || null,
+        locationId: validatedData.locationId,
         organizationId: validatedData.organizationId || "cmtu9mkcf0000yl3x83nmk589",
         isActive: true,
       },
