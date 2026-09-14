@@ -6,7 +6,7 @@ import { Warehouse, Package, Truck, PackageCheck, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function WMSPage() {
-  const [warehouses, setWarehouses] = useState([])
+  const [warehouses, setWarehouses] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

@@ -6,7 +6,7 @@ import { LayoutDashboard, Kanban, Calendar, DollarSign, Plus, X } from "lucide-r
 import { useEffect, useState } from "react"
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

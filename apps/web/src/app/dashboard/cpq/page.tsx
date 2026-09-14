@@ -6,7 +6,7 @@ import { FileText, DollarSign, Clock, CheckCircle, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function CPQPage() {
-  const [quotes, setQuotes] = useState([])
+  const [quotes, setQuotes] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

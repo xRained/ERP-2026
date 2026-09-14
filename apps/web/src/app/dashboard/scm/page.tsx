@@ -6,7 +6,7 @@ import { Truck, Route, Package, CheckCircle, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function SCMPage() {
-  const [shipments, setShipments] = useState([])
+  const [shipments, setShipments] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

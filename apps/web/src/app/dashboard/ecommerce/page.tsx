@@ -6,7 +6,7 @@ import { Globe, ShoppingCart, DollarSign, Package, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function EcommercePage() {
-  const [storefronts, setStorefronts] = useState([])
+  const [storefronts, setStorefronts] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

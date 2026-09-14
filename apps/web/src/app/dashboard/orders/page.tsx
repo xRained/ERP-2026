@@ -6,7 +6,7 @@ import { ShoppingCart, Package, DollarSign, Truck, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function OrdersPage() {
-  const [orders, setOrders] = useState([])
+  const [orders, setOrders] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

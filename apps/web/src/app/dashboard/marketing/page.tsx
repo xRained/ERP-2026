@@ -6,7 +6,7 @@ import { Megaphone, Users, DollarSign, Calendar, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function MarketingPage() {
-  const [campaigns, setCampaigns] = useState([])
+  const [campaigns, setCampaigns] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

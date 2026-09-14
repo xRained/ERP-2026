@@ -6,7 +6,7 @@ import { Users, Building2, Award, Calendar, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function HRMPage() {
-  const [employees, setEmployees] = useState([])
+  const [employees, setEmployees] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

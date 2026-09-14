@@ -6,7 +6,7 @@ import { Truck, Building2, FileText, DollarSign, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function ProcurementPage() {
-  const [suppliers, setSuppliers] = useState([])
+  const [suppliers, setSuppliers] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

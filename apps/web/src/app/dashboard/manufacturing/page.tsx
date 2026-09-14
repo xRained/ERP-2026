@@ -6,7 +6,7 @@ import { Wrench, FileText, Calendar, Settings, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function ManufacturingPage() {
-  const [workOrders, setWorkOrders] = useState([])
+  const [workOrders, setWorkOrders] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

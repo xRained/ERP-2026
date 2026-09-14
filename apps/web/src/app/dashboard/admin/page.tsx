@@ -6,8 +6,8 @@ import { Shield, Users, Key, FileText, Plus, X } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function AdminPage() {
-  const [users, setUsers] = useState([])
-  const [permissions, setPermissions] = useState([])
+  const [users, setUsers] = useState<any[]>([])
+  const [permissions, setPermissions] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

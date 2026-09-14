@@ -6,7 +6,7 @@ import { Monitor, DollarSign, ShoppingCart, CreditCard, Plus, X } from "lucide-r
 import { useEffect, useState } from "react"
 
 export default function POSPage() {
-  const [transactions, setTransactions] = useState([])
+  const [transactions, setTransactions] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

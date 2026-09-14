@@ -6,7 +6,7 @@ import { DollarSign, TrendingUp, TrendingDown, Wallet, Plus, X } from "lucide-re
 import { useEffect, useState } from "react"
 
 export default function FinancialPage() {
-  const [accounts, setAccounts] = useState([])
+  const [accounts, setAccounts] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({

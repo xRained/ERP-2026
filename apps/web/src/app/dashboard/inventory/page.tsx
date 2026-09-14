@@ -6,7 +6,7 @@ import { Package, AlertTriangle, DollarSign, Warehouse, Plus, X } from "lucide-r
 import { useEffect, useState } from "react"
 
 export default function InventoryPage() {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({
