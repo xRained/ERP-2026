@@ -53,7 +53,7 @@ export async function POST(request: Request) {
         name: validatedData.name,
         type: validatedData.type as any,
         startDate: validatedData.startDate ? new Date(validatedData.startDate) : new Date(),
-        endDate: validatedData.endDate ? new Date(validatedData.endDate) : null,
+        endDate: validatedData.endDate ? new Date(validatedData.endDate) : new Date(),
         budget: validatedData.budget,
         status: "DRAFT",
         organizationId: validatedData.organizationId,
