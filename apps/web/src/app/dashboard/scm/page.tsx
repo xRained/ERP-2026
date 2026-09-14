@@ -16,7 +16,6 @@ export default function SCMPage() {
     destinationId: '',
     status: 'PENDING',
     estimatedDelivery: '',
-    organizationId: 'cmtu9mkcf0000yl3x83nmk589',
   })
 
   useEffect(() => {
@@ -48,7 +47,6 @@ export default function SCMPage() {
           destinationId: '',
           status: 'PENDING',
           estimatedDelivery: '',
-          organizationId: 'cmtu9mkcf0000yl3x83nmk589',
         })
       } else {
         alert('Error: ' + (data.error || 'Failed to create shipment'))

@@ -16,7 +16,6 @@ export default function FieldServicePage() {
     priority: 'MEDIUM',
     status: 'OPEN',
     scheduledDate: '',
-    organizationId: 'cmtu9mkcf0000yl3x83nmk589',
   })
 
   useEffect(() => {
@@ -48,7 +47,6 @@ export default function FieldServicePage() {
           priority: 'MEDIUM',
           status: 'OPEN',
           scheduledDate: '',
-          organizationId: 'cmtu9mkcf0000yl3x83nmk589',
         })
       } else {
         alert('Error: ' + (data.error || 'Failed to create work order'))

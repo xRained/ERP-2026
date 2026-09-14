@@ -11,7 +11,6 @@ const createWorkOrderSchema = z.object({
   priority: z.enum(["LOW", "MEDIUM", "HIGH", "URGENT"]),
   status: z.enum(["OPEN", "ASSIGNED", "IN_PROGRESS", "COMPLETED"]),
   scheduledDate: z.string().optional(),
-  organizationId: z.string(),
 })
 
 export async function GET() {
@@ -59,7 +58,6 @@ export async function POST(request: Request) {
         status: validatedData.status,
         scheduledDate: validatedData.scheduledDate ? new Date(validatedData.scheduledDate) : null,
         createdById: session.user.id,
-        organizationId: validatedData.organizationId || "cmtu9mkcf0000yl3x83nmk589",
       },
     })
 
