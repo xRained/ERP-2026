@@ -7,8 +7,8 @@ import { z } from "zod"
 const createWarehouseSchema = z.object({
   name: z.string().min(1),
   code: z.string().min(1),
-  locationId: z.string().optional(),
-  organizationId: z.string().optional(),
+  locationId: z.string().min(1),
+  organizationId: z.string(),
 })
 
 export async function GET() {
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         name: validatedData.name,
         code: validatedData.code,
         locationId: validatedData.locationId,
-        organizationId: validatedData.organizationId || "cmtu9mkcf0000yl3x83nmk589",
+        organizationId: validatedData.organizationId,
         isActive: true,
       },
     })
